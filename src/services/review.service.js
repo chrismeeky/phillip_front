@@ -15,6 +15,13 @@ class ReviewService {
       return error;
     }
   }
+  static async findReviewByBusiness(businessId) {
+    try {
+      return await axios.get(`${BASE_URL}/reviews/${businessId}`);
+    } catch (error) {
+      return error;
+    }
+  }
   static async updateReview(id, data) {
     try {
       return await axios.patch(`${BASE_URL}/review/${id}`, data);

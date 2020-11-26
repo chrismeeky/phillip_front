@@ -24,7 +24,7 @@
       background-color: var(--color-primary-dark);
     }
     &:focus {
-        outline: none;
+      outline: none;
     }
   }
 
@@ -40,11 +40,11 @@
     font-weight: 700;
 
     &:hover {
-        color: var(--color-primary);
+      color: var(--color-primary);
     }
   }
 
   &__icon {
-      margin-right: 1.5rem;
+    margin-right: 1.5rem;
   }
 }

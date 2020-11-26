@@ -3,13 +3,7 @@ import getDate from "../../utilities/get-date";
 import BusinessService from "../../services/business.service";
 const Businesses = () => {
   const [allBusinesses, setAllBusinesses] = useState([
-    {
-      _id: 1,
-      businessName: "Alcatel",
-      businessDescription: "This is a sample decription",
-      date: "Jun 12, 1990",
-      approved: false,
-    },
+   
   ]);
 
   const handleDelete =async (id) => {
@@ -21,9 +15,7 @@ const Businesses = () => {
 
   const loadBusinesses = async () => {
     const result = await BusinessService.findAllBusinesses();
-
     if (result.data && result.data) {
-      console.log("business", result.data["businesss"]);
       setAllBusinesses(result.data["businesss"]);
     }
   };

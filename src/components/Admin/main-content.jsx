@@ -49,8 +49,7 @@ const MainContent = () => {
           height="50vh"
           setDefaultStyle="font-family: cursive; font-size: 16px;"
           setOptions={{
-            buttonList, // Or Array of button list, eg. [['font', 'align'], ['image']]
-            // Other option
+            buttonList,
           }}
         />
 

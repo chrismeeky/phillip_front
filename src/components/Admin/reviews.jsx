@@ -14,13 +14,11 @@ const Businesses = () => {
     const result = await ReviewService.deleteReview(id);
     if (result.data) {
       loadReviews();
-      console.log("deleted")
     }
   };
 
   const loadReviews = async () => {
     const result = await ReviewService.findAllReviews();
-
     if (result.data && result.data) {
       return setAllReviews(result.data["reviews"]);
     }
