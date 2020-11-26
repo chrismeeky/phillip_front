@@ -1,0 +1,110 @@
+@keyframes slideInLeft {
+  0% {
+    transform: translateX(-10rem);
+    opacity: 0.7;
+  }
+  60% {
+    opacity: 0.8;
+    transform: translateX(2rem);
+  }
+  75% {
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+@keyframes slideInRight {
+  0% {
+    transform: translateX(10rem);
+    opacity: 0.8;
+  }
+  50% {
+    opacity: 0.7;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slideInUp {
+  0% {
+    transform: translateY(20em);
+    opacity: 0.8;
+  }
+  50% {
+    opacity: 0.7;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slideOutLeft {
+  0% {
+    transform: translateX(-150em);
+    opacity: 0;
+  }
+}
+
+@keyframes bubbleOut {
+  0% {
+    z-index: 10;
+    opacity: 0;
+  }
+
+  50% {
+    transform: scale(1.2);
+    opacity: 1;
+  }
+
+  100% {
+    transform: scale(0);
+    opacity: 0;
+  }
+}
+@keyframes fillLine {
+  0% {
+    z-index: 10;
+    opacity: 0;
+  }
+
+  100% {
+    width: 12rem;
+    z-index: 100;
+  }
+}
+@keyframes fillRight {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    z-index: 100;
+    opacity: 1;
+  }
+}
+
+@keyframes zoomInOut {
+  0% {
+    transform: scale(0.8);
+  }
+  50% {
+    transform: scale(1.2);
+  }
+  100% {
+    transform: scale(0.8);
+  }
+}
+@keyframes fadeOut {
+  0% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+    transform: scale(0);
+  }
+}

@@ -1,0 +1,30 @@
+.input-group {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+
+  &__input {
+    border: none;
+    background-color: transparent;
+    border-bottom: 0.2rem solid var(--color-headings);
+    padding: 1rem;
+    font-size: 3rem;
+    font-weight: 700;
+    color: rgb(107, 105, 105);
+
+    &:focus {
+        box-shadow: none;
+        outline: none;
+
+    }
+  }
+
+  &__label {
+      transform: translateY(1rem);
+      font-size: 1.5rem;
+      font-weight: 700;
+  }
+}

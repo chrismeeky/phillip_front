@@ -1,0 +1,9 @@
+.main-content {
+  padding-top: 10rem;
+  flex: 0 0 calc(100% - 290px);
+
+  &__publish {
+    width: 80rem;
+    margin: auto;
+  }
+}

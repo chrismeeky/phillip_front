@@ -1,0 +1,57 @@
+.header {
+  display: flex;
+  background-color: white;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+
+  justify-content: space-between;
+  padding: 2.8rem 10rem;
+  &-title {
+    font-size: 3rem;
+    color: black;
+    font-weight: 700;
+    cursor: pointer;
+  }
+
+  &-nav {
+    align-self: center;
+
+    &__list {
+      list-style: none;
+      display: flex;
+    }
+
+    &__item {
+      font-size: 1.5rem;
+      font-weight: 700;
+    }
+    &__link {
+      &:link,
+      &:visited {
+        text-decoration: none;
+        color: var(--color-text);
+        font-weight: 700;
+      }
+      text-decoration: none;
+      color: var(--color-headings);
+      text-transform: uppercase;
+
+      &--login {
+        background-color: var(--color-primary);
+        color: white !important;
+        padding: 1.4rem 3rem;
+        border-radius: 0.5rem;
+        transition: all .3s;
+
+        &:hover {
+            background-color: var(--color-primary-dark);
+        }
+      }
+    }
+    &__item:not(:last-child) {
+      margin-right: 1.5rem;
+    }
+  }
+}

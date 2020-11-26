@@ -1,0 +1,16 @@
+.btn {
+  background-color: var(--color-primary);
+  margin-top: 1rem;
+  float: right;
+  font-size: 1.5rem;
+  color: white;
+  border: none;
+  padding: .5rem 1rem;
+  border-radius: .4rem;
+
+  &:hover {
+    box-shadow: 0 0.5rem 1rem rgba($color-primary, 0.4);
+    background-color: var(--color-primary-dark);
+    color: white;
+  }
+}

@@ -1,0 +1,24 @@
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+html {
+  // defines what 1rem is
+  font-size: 62.5%; // 1rem = 10px
+}
+body {
+  box-sizing: border-box;
+  background-color: #f4f5f8;
+  height: 100vh;
+  // overflow: hidden;
+}
+
+// body:active .filter-box .filter-box__dropdown .filter-box__dropdown-list {
+//   background-color: red;
+//   transform: scaleY(0);
+//   width: 0;
+//   opacity: 0;
+// }

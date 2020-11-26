@@ -1,0 +1,45 @@
+const buttonList = [
+  ["undo", "redo", "fontSize"],
+  [
+    ":p-More Paragraph-default.more_paragraph",
+    "font",
+    "formatBlock",
+    "paragraphStyle",
+    "blockquote",
+  ],
+  ["bold", "underline", "italic", "strike"],
+  [
+    ":t-More Text-default.more_text",
+    "subscript",
+    "superscript",
+    "fontColor",
+    "hiliteColor",
+    "textStyle",
+  ],
+  ["removeFormat"],
+  ["outdent", "indent"],
+  ["align", "horizontalRule", "list", "lineHeight"],
+  [
+    "-right",
+    ":i-More Misc-default.more_vertical",
+    "fullScreen",
+    "showBlocks",
+    "codeView",
+    "preview",
+    "print",
+    "save",
+    "template",
+  ],
+  [
+    "-right",
+    ":r-More Rich-default.more_plus",
+    "table",
+    "link",
+    "image",
+    "video",
+    "audio",
+    "imageGallery",
+  ],
+];
+
+export default buttonList;
