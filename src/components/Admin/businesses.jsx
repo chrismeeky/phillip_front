@@ -12,8 +12,12 @@ const Businesses = () => {
     },
   ]);
 
-  const handleApprove = (id) => {};
-  const handleDelete = (id) => {};
+  const handleDelete =async (id) => {
+    const result = await BusinessService.deleteBusiness(id);
+    if (result.data) {
+      loadBusinesses();
+    }
+  };
 
   const loadBusinesses = async () => {
     const result = await BusinessService.findAllBusinesses();
@@ -23,6 +27,9 @@ const Businesses = () => {
       setAllBusinesses(result.data["businesss"]);
     }
   };
+  const viewReviews = (id) => {
+
+  }
   useEffect(() => {
     loadBusinesses();
   }, []);
@@ -51,7 +58,7 @@ const Businesses = () => {
 
                 <td
                   className="data-table__bold"
-                  onClick={() => handleApprove(business._id)}
+                  onClick={() => viewReviews(business._id)}
                 >
                   Reviews
                 </td>
