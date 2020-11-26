@@ -40,7 +40,6 @@ const Businesses = () => {
             <tr>
               <th scope="col">Business Name</th>
               <th scope="col">Created on</th>
-              <th scope="col">Status</th>
             </tr>
           </thead>
           <tbody>
@@ -49,9 +48,6 @@ const Businesses = () => {
                 <td className="data-table__bold">{business.businessName}</td>
                 <td className="">{getDate(business.date)}</td>
 
-                <td className="">
-                  {business.approved ? "Approved" : "Pending"}
-                </td>
 
                 <td
                   className="data-table__bold"

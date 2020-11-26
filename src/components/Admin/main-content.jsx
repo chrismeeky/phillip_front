@@ -2,11 +2,28 @@ import React, { useState } from "react";
 import SunEditor from "suneditor-react";
 import buttonList from "../../constants/button-list";
 import "suneditor/dist/css/suneditor.min.css"; // Import Sun Editor's CSS File
+
+import BusinessService from "../../services/business.service";
 const MainContent = () => {
   const [businessName, setBusinessName] = useState("");
   const [businessDescription, setBusinessDescription] = useState("");
 
   const [initialDescription, setInitialDescription] = useState("");
+
+  const handleChange = (event) => {
+    setBusinessName(event.target.value);
+  };
+
+  const createBusiness = async () => {
+    const result = await BusinessService.createBusiness({
+      businessName,
+      businessDescription,
+    });
+    console.log("new business1", result)
+    if (result.data) {
+      console.log("new business", result.data);
+    }
+  };
   return (
     <div className="main-content">
       <div className="main-content__publish">
@@ -16,6 +33,8 @@ const MainContent = () => {
             className="input-group__input"
             id="input"
             placeholder="Business Name"
+            name="businessName"
+            onChange={handleChange}
           />
           <label htmlFor="input" className="input-group__label">
             Business Name
@@ -35,7 +54,7 @@ const MainContent = () => {
           }}
         />
 
-        <button className="btn btn--publish">Publish</button>
+        <button className="btn btn--publish" onClick={createBusiness}>Publish</button>
       </div>
     </div>
   );

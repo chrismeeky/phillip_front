@@ -4,16 +4,27 @@ import ReviewService from "../../services/review.service";
 const Businesses = () => {
   const [allReviews, setAllReviews] = useState([]);
 
-  const handleApprove = (id) => {};
-  const handleDelete = (id) => {};
+  const handleApprove = async (id, status) => {
+    const result = await ReviewService.updateReview(id, { approved: !status });
+    if (result.data) {
+      loadReviews();
+    }
+  };
+  const handleDelete = async (id) => {
+    const result = await ReviewService.deleteReview(id);
+    if (result.data) {
+      loadReviews();
+      console.log("deleted")
+    }
+  };
 
   const loadReviews = async () => {
-    const result = await BusinessService.findAllReviews();
+    const result = await ReviewService.findAllReviews();
 
     if (result.data && result.data) {
-      console.log("business", result.data["businesss"]);
-      setAllBusinesses(result.data["businesss"]);
+      return setAllReviews(result.data["reviews"]);
     }
+    setAllReviews([])
   };
   useEffect(() => {
     loadReviews();
@@ -21,9 +32,9 @@ const Businesses = () => {
   return (
     <div className="businesses">
       <div className="table-container__title">
-        Posted Businesses{" "}
+        Reviews{" "}
         <span className="table-container__title__count">
-          ({allBusinesses.length})
+          ({allReviews.length})
         </span>
       </div>
       <div className="table-container">
@@ -31,30 +42,35 @@ const Businesses = () => {
           <thead>
             <tr>
               <th scope="col">Business Name</th>
+              <th scope="col">User</th>
+
               <th scope="col">Created on</th>
+
               <th scope="col">Status</th>
             </tr>
           </thead>
           <tbody>
-            {allReviews.map((business) => (
+            {allReviews.map((review) => (
               <tr>
-                <td className="data-table__bold">{business.businessName}</td>
-                <td className="">{getDate(business.date)}</td>
-
-                <td className="">
-                  {business.approved ? "Approved" : "Pending"}
+                <td className="data-table__bold">
+                  {review.business.businessName}
                 </td>
+                <td className="data-table__bold">{review.user.email}</td>
+
+                <td className="">{getDate(review.date)}</td>
+
+                <td className="">{review.approved ? "Approved" : "Pending"}</td>
 
                 <td
-                  className="data-table__bold"
-                  onClick={() => handleApprove(business._id)}
+                  className="data-table__edit"
+                  onClick={() => handleApprove(review._id, review.approved)}
                 >
-                  Reviews
+                  {review.approved ? "Unapprove" : "Approve"}
                 </td>
 
                 <td
                   className="data-table__delete"
-                  onClick={() => handleDelete(business._id)}
+                  onClick={() => handleDelete(review._id)}
                 >
                   Delete
                 </td>

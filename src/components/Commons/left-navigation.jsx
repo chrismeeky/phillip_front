@@ -18,7 +18,10 @@ const LeftNavigation = (props) => {
           {" "}
           <i className="left-navigation__icon fa fa-briefcase"></i> Businesses
         </li>
-        <li className="left-navigation__item">
+        <li
+          className="left-navigation__item"
+          onClick={() => props.setMenu("reviews")}
+        >
           <i className="left-navigation__icon fa fa-star"></i>Reviews
         </li>{" "}
         <li className="left-navigation__item">
